@@ -1,8 +1,9 @@
 import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { RootStackParamList } from "~/@types/navigation";
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 import Home from "~/screens/Home";
 import Post from "~/screens/Post";

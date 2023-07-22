@@ -1,8 +1,13 @@
 import React from "react";
+import { TouchableOpacity } from "react-native";
+import { HomeNavigationProp } from "~/@types/navigation";
+import { useNavigation } from "~/hooks/useNavigation";
 import { Title } from "~/screens/Home/styles";
+import { IPost } from "~/store/slices/postsSlice";
 import BadgeCategory from "../BadgeCategory";
 
 import {
+  ArticleContent,
   ArticleInfo,
   ArticleTitle,
   BadgesContainer,
@@ -11,28 +16,37 @@ import {
 } from "./styles";
 
 interface FeaturedArticleProps {
-  title?: string;
-  info?: string;
+  data: IPost | undefined;
 }
 
-const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
-  title = "",
-  info = "",
-}) => {
+const FeaturedArticle: React.FC<FeaturedArticleProps> = ({ data }) => {
+  const navigation = useNavigation();
+
+  const handleNavigateToPost = () =>
+    data?.id
+      ? navigation.navigate("Post", {
+          id: data.id,
+        })
+      : null;
+
   return (
     <Container>
       <Title>Today's Article</Title>
-      <FeaturedImage
-        source={{
-          uri: "https://picsum.photos/200/300",
-        }}
-        resizeMode="cover"
-      />
+      <TouchableOpacity onPress={handleNavigateToPost}>
+        <FeaturedImage
+          source={{
+            uri: "https://picsum.photos/200/300",
+          }}
+          resizeMode="cover"
+        />
+      </TouchableOpacity>
       <BadgesContainer>
         <BadgeCategory text="Lorem ipsum" />
       </BadgesContainer>
-      <ArticleTitle numberOfLines={2}>{title}</ArticleTitle>
-      <ArticleInfo numberOfLines={1}>{info}</ArticleInfo>
+      <ArticleContent onPress={handleNavigateToPost}>
+        <ArticleTitle numberOfLines={2}>{data?.title}</ArticleTitle>
+        <ArticleInfo numberOfLines={1}>{data?.body}</ArticleInfo>
+      </ArticleContent>
     </Container>
   );
 };

@@ -27,3 +27,8 @@ export const ArticleInfo = styled.Text`
   font-size: ${({ theme }) => theme.size.font.xs}px;
   color: ${({ theme }) => theme.colors.secondary};
 `
+
+export const ArticleContent = styled.TouchableOpacity`
+  flex: 1;
+  gap: ${RFValue(10)}px;
+`

@@ -5,6 +5,7 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0 ${({ theme }) => theme.size.lg}px;
 `
 
 export const FavoritesContainer = styled.TouchableOpacity`

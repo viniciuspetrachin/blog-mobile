@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         <HeaderHome />
         <SearchBox />
         <Content>
-          <FeaturedArticle title={posts[0]?.title} info={posts[0]?.body} />
+          <FeaturedArticle data={posts[0]} />
           <Divider />
           <RecentArticles data={posts} />
         </Content>
