@@ -10,6 +10,7 @@ import {
   Inter_400Regular,
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
+import Post from "~/screens/Post";
 
 const App: React.FC = () => {
   const [fontLoaded] = useFonts({
@@ -22,7 +23,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <Home />
+        <Post />
       </ThemeProvider>
     </Provider>
   );

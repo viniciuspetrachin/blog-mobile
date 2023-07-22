@@ -1,37 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Divider from "~/components/Divider";
 import FeaturedArticle from "~/components/FeaturedArticle";
-import Header from "~/components/Header";
+import HeaderHome from "~/components/HeaderHome";
 import RecentArticles from "~/components/RecentArticles";
 import SearchBox from "~/components/SearchBox";
-import api from "~/services/api";
+import useAppDispatch from "~/hooks/useAppDispatch";
+import useAppSelector from "~/hooks/useAppSelector";
+
+import { fetchPosts } from "~/store/slices/postsSlice";
 
 import { Container, Content } from "./styles";
 
 const Home: React.FC = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const posts = useAppSelector((state) => state.posts.data);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setLoading(true);
-    api
-      .get("/posts")
-      .then((response) => {
-        console.log(response.data);
-        setPosts(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    dispatch(fetchPosts());
   }, []);
 
   return (
     <>
       <Container>
-        <Header />
+        <HeaderHome />
         <SearchBox />
         <Content>
           <FeaturedArticle title={posts[0]?.title} info={posts[0]?.body} />
