@@ -2,7 +2,6 @@ import React from "react";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components/native";
 import theme from "~/global/theme";
-import Home from "~/screens/Home";
 import store from "~/store";
 
 import {
@@ -10,7 +9,8 @@ import {
   Inter_400Regular,
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
-import Post from "~/screens/Post";
+
+import Routes from "~/routes";
 
 const App: React.FC = () => {
   const [fontLoaded] = useFonts({
@@ -23,7 +23,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <Post />
+        <Routes />
       </ThemeProvider>
     </Provider>
   );
