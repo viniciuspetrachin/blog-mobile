@@ -10,7 +10,9 @@ export const sizeFont = (value: number) =>
 const theme = {
   colors: {
     primary: '#1E2630',
-    background: "#FFFFFF"
+    background: "#FFFFFF",
+    gray: "#E6E7E8",
+    secondary: "#6B6C6E",
   },
   fonts: {
     regular: 'Inter_400Regular',
