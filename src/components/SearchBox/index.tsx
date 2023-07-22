@@ -11,7 +11,7 @@ const SearchBox: React.FC<SearchBoxProps> = () => {
     <Container>
       <StyledInput placeholder="Search..." />
       <StyledButton>
-        <Ionicons name="ios-search" size={24} color="black" />
+        <Ionicons name="ios-search" size={24} color="white" />
       </StyledButton>
     </Container>
   );
