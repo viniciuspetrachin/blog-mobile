@@ -1,9 +1,12 @@
+import { Platform } from "react-native";
 import styled from "styled-components/native";
 
-export const Container = styled.ScrollView`
-  flex: 1;
+export const Container = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+})`
   background-color: ${({ theme }) => theme.colors.background};
   padding: ${({ theme }) => theme.size.md}px 0;
+  padding-top: ${({theme}) => Platform.OS === 'ios' ? 60 : theme.size.md}px;
 `;
 
 export const Content = styled.View`

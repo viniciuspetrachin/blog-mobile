@@ -1,4 +1,5 @@
 import React from "react";
+import { SafeAreaView } from "react-native";
 import Divider from "~/components/Divider";
 import FeaturedArticle from "~/components/FeaturedArticle";
 import Header from "~/components/Header";
