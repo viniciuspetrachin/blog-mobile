@@ -1,24 +1,18 @@
-import Home from "./src/screens/Home";
-
-import { useFonts } from "expo-font";
-
-import { Inter_400Regular, Inter_700Bold } from "@expo-google-fonts/inter";
-import { ThemeProvider } from "styled-components";
+import React from "react";
+import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components/native";
 import theme from "~/global/theme";
+import Home from "~/screens/Home";
+import store from "~/store";
 
-export default function App() {
-  const [fontsLoaded] = useFonts({
-    Inter_400Regular,
-    Inter_700Bold,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
-
+const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Home />
-    </ThemeProvider>
-  )
-}
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Home />
+      </ThemeProvider>
+    </Provider>
+  );
+};
+
+export default App;
