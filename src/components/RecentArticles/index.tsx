@@ -1,4 +1,5 @@
 import React from "react";
+import { FlatList, View } from "react-native";
 import ArticleThumb from "../ArticleThumb";
 
 import { Container, Title } from "./styles";
@@ -13,10 +14,12 @@ interface RecentArticlesProps {
 }
 
 const RecentArticles: React.FC<RecentArticlesProps> = ({ data }) => {
+  const posts = data.slice(1, 6);
+
   return (
     <Container>
       <Title>More Articles</Title>
-      {data?.map((item) => (
+      {posts?.map((item) => (
         <ArticleThumb
           key={item.id}
           id={item.id}

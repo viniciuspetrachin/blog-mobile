@@ -12,27 +12,27 @@ import {
 
 interface FeaturedArticleProps {
   title?: string;
+  info?: string;
 }
 
 const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
-  title = "Today's Article",
+  title = "",
+  info = "",
 }) => {
   return (
     <Container>
-      <Title>{title}</Title>
+      <Title>Today's Article</Title>
       <FeaturedImage
         source={{
-          uri: "https://cdn.pixabay.com/photo/2023/06/27/10/51/man-8091933_1280.jpg",
+          uri: "https://picsum.photos/200/300",
         }}
         resizeMode="cover"
       />
       <BadgesContainer>
         <BadgeCategory text="Lorem ipsum" />
       </BadgesContainer>
-      <ArticleTitle>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-      </ArticleTitle>
-      <ArticleInfo>By John Doe | 10/10/2021 | 10 min read</ArticleInfo>
+      <ArticleTitle numberOfLines={2}>{title}</ArticleTitle>
+      <ArticleInfo numberOfLines={1}>{info}</ArticleInfo>
     </Container>
   );
 };

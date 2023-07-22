@@ -19,12 +19,12 @@ const ArticleThumb: React.FC<ArticleThumbProps> = ({
     <Container>
       <Thumbnail
         source={{
-          uri: "https://cdn.pixabay.com/photo/2023/07/03/08/05/turkey-8103602_1280.jpg",
+          uri: "https://picsum.photos/200/300",
         }}
       />
       <Content>
-        <Title>{title}</Title>
-        <TextInfo>{info}</TextInfo>
+        <Title numberOfLines={2}>{title}</Title>
+        <TextInfo numberOfLines={3}>{info}</TextInfo>
       </Content>
     </Container>
   );

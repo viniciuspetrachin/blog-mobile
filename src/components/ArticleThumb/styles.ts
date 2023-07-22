@@ -6,12 +6,14 @@ export const Container = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   gap: ${RFValue(10)}px;
+  margin-bottom: ${RFValue(6)}px;
 `
 
 export const Content = styled.View`
   flex: 1;
   flex-direction: column;
-  gap: ${RFValue(5)}px;
+  gap: ${RFValue(3)}px;
+  height: 100%;
 `
 
 export const Thumbnail = styled.Image`

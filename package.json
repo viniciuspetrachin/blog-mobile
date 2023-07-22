@@ -19,7 +19,8 @@
     "react-native": "0.71.8",
     "react-native-responsive-fontsize": "^0.5.1",
     "react-redux": "^8.1.1",
-    "styled-components": "^5.1.26"
+    "styled-components": "^5.1.26",
+    "lottie-react-native": "5.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
