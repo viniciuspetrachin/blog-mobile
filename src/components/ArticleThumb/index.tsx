@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "~/hooks/useNavigation";
 
 import { Container, Content, TextInfo, Thumbnail, Title } from "./styles";
 
@@ -15,8 +16,12 @@ const ArticleThumb: React.FC<ArticleThumbProps> = ({
   title,
   info,
 }) => {
+  const navigation = useNavigation();
+
+  const handleArticle = () => navigation.navigate("Post", { id });
+
   return (
-    <Container>
+    <Container onPress={handleArticle}>
       <Thumbnail
         source={{
           uri: "https://picsum.photos/200/300",
