@@ -11,7 +11,7 @@ const HeaderHome: React.FC = () => {
   return (
     <Container>
       <HeaderContent>
-        <TextName>Jonh Doe</TextName>
+        <TextName>Vinicius Petrachin</TextName>
         <TextGreeting>Bom dia!</TextGreeting>
       </HeaderContent>
       <Image source={{ uri: "https://github.com/viniciuspetrachin.png" }} />

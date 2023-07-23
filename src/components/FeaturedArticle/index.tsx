@@ -31,7 +31,9 @@ const FeaturedArticle: React.FC<FeaturedArticleProps> = ({ data }) => {
 
   return (
     <Container>
-      <Title>Today's Article</Title>
+      <Title>
+        <Title>Destaque</Title>
+      </Title>
       <TouchableOpacity onPress={handleNavigateToPost}>
         <FeaturedImage
           source={{
