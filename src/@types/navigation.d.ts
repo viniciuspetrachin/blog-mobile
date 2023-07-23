@@ -5,7 +5,9 @@ export type RootStackParamList = {
   Post: {
     id: number;
   };
-  Posts: undefined;
+  Posts: {
+    search: string;
+  } | undefined;
 };
 
 export type HomeNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
