@@ -5,6 +5,7 @@ export type RootStackParamList = {
   Post: {
     id: number;
   };
+  Posts: undefined;
 };
 
 export type HomeNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;

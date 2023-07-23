@@ -1,24 +1,42 @@
 import React from "react";
 import { FlatList, View } from "react-native";
+import { useNavigation } from "~/hooks/useNavigation";
 import ArticleThumb from "../ArticleThumb";
 
-import { Container, Title } from "./styles";
+import { Container, Header, SeeAllButton, SeeAllText, Title } from "./styles";
 
 interface RecentArticlesProps {
+  title?: string;
   data: {
     userId: number;
     id: number;
     title: string;
     body: string;
   }[];
+  showAll?: boolean;
 }
 
-const RecentArticles: React.FC<RecentArticlesProps> = ({ data }) => {
-  const posts = data.slice(1, 6);
+const RecentArticles: React.FC<RecentArticlesProps> = ({
+  data,
+  showAll,
+  title = "Mais artigos",
+}) => {
+  const posts = showAll ? data : data.slice(1, 6);
+
+  const navigation = useNavigation();
+
+  const handleSeeAll = () => navigation.navigate("Posts");
 
   return (
     <Container>
-      <Title>More Articles</Title>
+      <Header>
+        <Title>{title}</Title>
+        {!showAll && (
+          <SeeAllButton onPress={handleSeeAll}>
+            <SeeAllText>Ver todos</SeeAllText>
+          </SeeAllButton>
+        )}
+      </Header>
       {posts?.map((item) => (
         <ArticleThumb
           key={item.id}

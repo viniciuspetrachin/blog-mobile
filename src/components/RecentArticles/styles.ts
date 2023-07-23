@@ -12,3 +12,20 @@ export const Title = styled.Text`
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: ${RFValue(5)}px;
 `
+
+export const Header = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+export const SeeAllButton = styled.TouchableOpacity`
+  padding: ${RFValue(2)}px ${RFValue(5)}px;
+  justify-content: center;
+  align-items: center;
+`
+
+export const SeeAllText = styled.Text`
+  font-size: ${({ theme }) => theme.size.font.xs}px;
+  font-family: ${({ theme }) => theme.fonts.bold};
+  color: ${({ theme }) => theme.colors.secondary};
+`
