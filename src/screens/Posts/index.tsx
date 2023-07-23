@@ -3,7 +3,6 @@ import ArticleThumb from "~/components/ArticleThumb";
 
 import useAppSelector from "~/hooks/useAppSelector";
 import { FlashList } from "@shopify/flash-list";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { Container, ContentThumb } from "./styles";
 import Header from "~/components/Header";
 
@@ -29,7 +28,6 @@ const Posts: React.FC = () => {
           </ContentThumb>
         )}
         showsVerticalScrollIndicator={false}
-        style={{ flex: 1 }}
         estimatedItemSize={100}
       />
     </Container>
