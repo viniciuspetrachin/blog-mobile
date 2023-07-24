@@ -4,6 +4,7 @@ import {
   configureStore,
   ThunkAction,
 } from '@reduxjs/toolkit'
+import commentsSlice from './slices/commentsSlice'
 import postSlice from './slices/postSlice'
 
 import postsSlice from './slices/postsSlice'
@@ -11,6 +12,7 @@ import postsSlice from './slices/postsSlice'
 const reducers = combineReducers({
   posts: postsSlice,
   post: postSlice,
+  comments: commentsSlice,
 })
 
 const store = configureStore({

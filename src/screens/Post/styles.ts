@@ -6,7 +6,6 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Content = styled.View`
-flex: 1;
  margin: ${({ theme }) => theme.size.md}px ${({ theme }) => theme.size.lg}px;
  gap: ${({ theme }) => theme.size.xs}px;
 `
