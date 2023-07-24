@@ -22,7 +22,7 @@ const SearchBox: React.FC<SearchBoxProps> = () => {
   return (
     <Container>
       <StyledInput
-        placeholder="Search..."
+        placeholder="Pesquisar..."
         value={search}
         onChangeText={setSearch}
         onSubmitEditing={handleSearch}

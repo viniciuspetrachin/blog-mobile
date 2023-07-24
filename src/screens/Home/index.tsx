@@ -20,17 +20,15 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <Container>
-        <HeaderHome />
-        <SearchBox />
-        <Content>
-          <FeaturedArticle data={posts[0]} />
-          <Divider />
-          <RecentArticles data={posts} />
-        </Content>
-      </Container>
-    </>
+    <Container>
+      <HeaderHome />
+      <SearchBox />
+      <Content>
+        <FeaturedArticle data={posts[0]} />
+        <Divider />
+        <RecentArticles data={posts} />
+      </Content>
+    </Container>
   );
 };
 

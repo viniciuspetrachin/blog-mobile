@@ -1,13 +1,13 @@
 import { Platform } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
-  padding: ${({ theme }) => theme.size.md}px 0;
-  padding-top: ${({ theme }) => Platform.OS === 'ios' ? 60 : theme.size.md}px;
-  padding-bottom: ${RFValue(100)}px;
+  /* padding: ${({ theme }) => theme.size.md}px 0; */
+  padding-top: ${RFValue(60)}px;
+  /* ${Platform.OS === 'android' && css`padding-bottom: 0}px`}; */
 `;
 
 export const Content = styled.ScrollView.attrs({

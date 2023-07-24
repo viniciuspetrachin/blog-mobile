@@ -1,3 +1,4 @@
+import { Platform } from 'react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
 import styled, { css } from 'styled-components/native'
 
@@ -12,6 +13,7 @@ export const Container = styled.View<ContainerProps>`
   justify-content: ${({ showBookmark }) => showBookmark ? 'space-between' : 'flex-start'};
   padding: 0 ${({ theme }) => theme.size.lg}px;
   padding-bottom: ${({ paddingBottom }) => RFValue(paddingBottom)}px;
+  ${Platform.OS === 'android' && css`margin-top: ${RFValue(60)}px`};
 `
 
 export const FavoritesContainer = styled.TouchableOpacity`

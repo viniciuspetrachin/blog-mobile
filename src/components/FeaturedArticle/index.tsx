@@ -47,7 +47,7 @@ const FeaturedArticle: React.FC<FeaturedArticleProps> = ({ data }) => {
       </BadgesContainer>
       <ArticleContent onPress={handleNavigateToPost}>
         <ArticleTitle numberOfLines={2}>{data?.title}</ArticleTitle>
-        <ArticleInfo numberOfLines={1}>{data?.body}</ArticleInfo>
+        <ArticleInfo numberOfLines={2}>{data?.body}</ArticleInfo>
       </ArticleContent>
     </Container>
   );
