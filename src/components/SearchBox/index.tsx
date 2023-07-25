@@ -27,7 +27,7 @@ const SearchBox: React.FC<SearchBoxProps> = () => {
         onChangeText={setSearch}
         onSubmitEditing={handleSearch}
       />
-      <StyledButton onPress={handleSearch}>
+      <StyledButton testID="search" onPress={handleSearch}>
         <Ionicons name="ios-search" size={24} color="white" />
       </StyledButton>
     </Container>

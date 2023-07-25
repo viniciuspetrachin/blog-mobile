@@ -32,6 +32,7 @@ const Header: React.FC<HeaderProps> = ({
       {showBack && (
         <TouchableOpacity onPress={handleBack}>
           <Feather
+            testID="back"
             name="chevron-left"
             size={RFValue(32)}
             color={theme.colors.primary}
@@ -46,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
         <Title>{title.length > 20 ? `${title.slice(0, 20)}...` : title}</Title>
       )}
       {showBookmark && (
-        <FavoritesContainer onPress={toggleBookmark}>
+        <FavoritesContainer testID="bookmark" onPress={toggleBookmark}>
           <MaterialIcons
             name={selected ? "bookmark" : "bookmark-border"}
             size={RFValue(14)}

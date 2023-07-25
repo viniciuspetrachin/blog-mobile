@@ -69,5 +69,4 @@ const Post: React.FC = () => {
     </Container>
   );
 };
-
 export default Post;
