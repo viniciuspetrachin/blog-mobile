@@ -1,0 +1,41 @@
+# The test will:
+# 1. Open the app
+# 2. Tap on "Search"
+# 3. Type "qui est esse"
+# 4. Tap on the first result
+# 5. Tap on "Bookmark"
+# 6. Tap on "Back"
+# 7. Tap on "Back"
+#
+# The test will fail if:
+# - The app is not installed
+# - The app is not running
+# - The app is not on the expected screen
+# - The app does not have the expected text
+# - The app does not have the expected element
+
+appId: com.example.blog-mobile
+---
+- launchApp:
+    appId: com.example.blog-mobile
+
+- tapOn: "Pesquisar..."
+
+- inputText: "qui est esse"
+
+- tapOn:
+    id: "search"
+
+- tapOn:
+    "qui est esse est rerum tempore vitae\nsequi sint nihil reprehenderit dolor\
+    \ beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae\
+    \ ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+
+- tapOn:
+    id: "bookmark"
+
+- tapOn:
+    id: "back"
+
+- tapOn:
+    id: "back"
