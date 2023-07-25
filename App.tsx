@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components/native";
 import theme from "~/global/theme";
 import store from "~/store";
+import "react-native-gesture-handler";
 
 import {
   useFonts,

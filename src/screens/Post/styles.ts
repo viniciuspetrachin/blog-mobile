@@ -5,6 +5,14 @@ export const Container = styled.SafeAreaView`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
+export const Image = styled.Image.attrs({
+  resizeMode: 'cover'
+})`
+  width: 100%;
+  aspect-ratio: 1.6;
+  border-radius: ${({ theme }) => theme.size.xs}px;
+`
+
 export const Content = styled.View`
  margin: ${({ theme }) => theme.size.md}px ${({ theme }) => theme.size.lg}px;
  gap: ${({ theme }) => theme.size.xs}px;

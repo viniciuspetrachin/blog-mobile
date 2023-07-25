@@ -27,7 +27,7 @@ const Posts: React.FC = () => {
         ListHeaderComponent={
           <Header title="Posts" paddingBottom={10} showBookmark={false} />
         }
-        data={filteredPosts}
+        data={filteredPosts ?? posts}
         keyExtractor={(item) => String(item.id)}
         renderItem={({ item }) => (
           <ContentThumb>

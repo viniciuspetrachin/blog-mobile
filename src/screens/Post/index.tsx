@@ -27,9 +27,10 @@ const Post: React.FC = () => {
   );
 
   useEffect(() => {
+    if (!params?.id) return;
     dispatch(fetchPost(params?.id));
     dispatch(fetchComments(params?.id));
-  }, []);
+  }, [params?.id]);
 
   return (
     <Container>
@@ -38,7 +39,7 @@ const Post: React.FC = () => {
         <Loading />
       ) : (
         <FlashList
-          data={commentsData}
+          data={commentsData ?? []}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => <Comment data={item} />}
           estimatedItemSize={10}
